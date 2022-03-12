@@ -15,7 +15,7 @@ fun totalFee(cardType: CardType, limit: Int, amount: Int) =
         cardType == CardType.Visa || cardType == CardType.Mir && limit < 600_000_00
     ) {
         val totalFee = calculateFee(cardType, amount, limit)
-        println("Ваша комиссия составит: $totalFee")
+        println("$totalFee")
     } else if (cardType == CardType.VkPay && limit < 40_000_00) {
         println(0)
     } else {
