@@ -19,7 +19,7 @@ class DifferentCommissionKtTest {
         )
 
         // assert
-        assertEquals(println(0), result)
+        assertEquals("0", result)
     }
 
     @Test
@@ -37,7 +37,7 @@ class DifferentCommissionKtTest {
         )
 
         // assert
-        assertEquals(println(1125_00), result)
+        assertEquals("112500", result)
     }
 
     @Test
@@ -55,7 +55,7 @@ class DifferentCommissionKtTest {
         )
 
         // assert
-        assertEquals(println(920_00), result)
+        assertEquals("92000", result)
     }
 
     @Test
@@ -73,7 +73,7 @@ class DifferentCommissionKtTest {
         )
 
         // assert
-        assertEquals(println(1125_00), result)
+        assertEquals("112500", result)
     }
 
     @Test
@@ -91,7 +91,7 @@ class DifferentCommissionKtTest {
         )
 
         // assert
-        assertEquals(println("Платеж невозможен, превышен месячный лимит"), result)
+        assertEquals("Платеж невозможен, превышен месячный лимит", result)
     }
 
     @Test

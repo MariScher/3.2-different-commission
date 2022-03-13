@@ -7,19 +7,20 @@ fun main() {
     val amount = 15_000_00
 
     val limit = amount + previousAmount
-    totalFee(cardType = CardType.VkPay, limit, amount)
+    val result = totalFee(cardType = CardType.VkPay, limit, amount)
+    println(result)
 }
 
-fun totalFee(cardType: CardType, limit: Int, amount: Int) =
+fun totalFee(cardType: CardType, limit: Int, amount: Int): String =
     if ((cardType == CardType.Maestro || cardType == CardType.MC ||
-        cardType == CardType.Visa || cardType == CardType.Mir) && (limit < 600_000_00)
+                cardType == CardType.Visa || cardType == CardType.Mir) && (limit < 600_000_00)
     ) {
         val totalFee = calculateFee(cardType, amount, limit)
-        println("$totalFee")
+        "$totalFee"
     } else if (cardType == CardType.VkPay && limit < 40_000_00) {
-        println(0)
+        "0"
     } else {
-        println("Платеж невозможен, превышен месячный лимит")
+        "Платеж невозможен, превышен месячный лимит"
     }
 
 fun calculateFee(cardType: CardType, amount: Int, limit: Int) = when (cardType) {
