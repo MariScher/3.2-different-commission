@@ -11,8 +11,8 @@ fun main() {
 }
 
 fun totalFee(cardType: CardType, limit: Int, amount: Int) =
-    if (cardType == CardType.Maestro || cardType == CardType.MC ||
-        cardType == CardType.Visa || cardType == CardType.Mir && limit < 600_000_00
+    if ((cardType == CardType.Maestro || cardType == CardType.MC ||
+        cardType == CardType.Visa || cardType == CardType.Mir) && (limit < 600_000_00)
     ) {
         val totalFee = calculateFee(cardType, amount, limit)
         println("$totalFee")
@@ -24,7 +24,7 @@ fun totalFee(cardType: CardType, limit: Int, amount: Int) =
 
 fun calculateFee(cardType: CardType, amount: Int, limit: Int) = when (cardType) {
     CardType.Maestro, CardType.MC -> {
-        if (limit > 75_000_00) (amount * 0.006 + 20).toInt() else 0
+        if (limit > 75_000_00) (amount * 0.006 + 20_00).toInt() else 0
     }
     CardType.Visa, CardType.Mir -> {
         if (limit > 35_00) (amount * 0.0075).toInt() else 35_00
