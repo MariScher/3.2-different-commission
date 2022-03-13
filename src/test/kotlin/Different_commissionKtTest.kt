@@ -145,6 +145,6 @@ class DifferentCommissionKtTest {
         )
 
         // assert
-        assertEquals(1125_00, result)
+        assertEquals(112_00, result)
     }
 }
