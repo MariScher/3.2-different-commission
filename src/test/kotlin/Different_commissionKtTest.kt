@@ -127,7 +127,7 @@ class DifferentCommissionKtTest {
         )
 
         // assert
-        assertEquals(920_00, result)
+        assertEquals(92000, result)
     }
 
     @Test
@@ -145,6 +145,6 @@ class DifferentCommissionKtTest {
         )
 
         // assert
-        assertEquals(112_00, result)
+        assertEquals(112500, result)
     }
 }
